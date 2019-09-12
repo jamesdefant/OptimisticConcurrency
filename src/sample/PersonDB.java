@@ -83,11 +83,11 @@ public class PersonDB {
                     "`nickname` = ?, " +
                     "`age` = ? " +
                     "WHERE `id` = ? " +
-                    "AND `name` = ? " +
-                    "AND (`nickname` = ? OR " +
-                         "`nickname` IS NULL AND ? IS NULL) " +
-                    "AND (`age` = ? OR " +
-                        "`age` IS NULL AND ? IS NULL)";
+                        "AND `name` = ? " +
+                        "AND (`nickname` = ? OR " +
+                             "`nickname` IS NULL AND ? IS NULL) " +
+                        "AND (`age` = ? OR " +
+                            "`age` IS NULL AND ? IS NULL)";
 
 
             // Create a Prepared Statement object
@@ -97,7 +97,7 @@ public class PersonDB {
             // ASSIGNMENT
             stmt.setString(1, newPerson.getName());
 
-            // Nullable - nickname
+            // Nullable - nickname : String
             if(newPerson.getNickname() == null || newPerson.getNickname().isEmpty()) {
                 System.out.println("Nickname is null");
                 stmt.setNull(2, Types.VARCHAR);
@@ -106,7 +106,7 @@ public class PersonDB {
                 stmt.setString(2, newPerson.getNickname());
             }
 
-            // Nullable - age
+            // Nullable - age : Integer
             if(newPerson.getAge() == null || newPerson.getAge() == 0) {
                 System.out.println("Age is null");
                 stmt.setNull(3, Types.INTEGER);
