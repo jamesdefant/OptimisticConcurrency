@@ -55,7 +55,7 @@ String sql = "UPDATE persons " +
                       "`age` IS NULL AND ? IS NULL)";
 ```
 
-- Further down in the **PersonDB class** -> updatePerson(Person oldPerson, Person newPerson)` method, when we prepare the statement with the **?** parameters, we **check whether or not our newPerson values are null** and use the `stmt.setNull(int parameterIndex, Types columnType)` method to add a `NULL` to the database column.
+- Further down in the **PersonDB class** -> `updatePerson(Person oldPerson, Person newPerson)` method, when we prepare the statement with the **?** parameters, we **check whether or not our newPerson values are null** and use the `stmt.setNull(int parameterIndex, Types columnType)` method to add a `NULL` to the database column.
 
 ```java
 // Nullable - nickname : String
@@ -68,7 +68,7 @@ else {
 }
 ```
 
-- Further down in the **PersonDB class** -> updatePerson(Person oldPerson, Person newPerson)` method, when we compare the oldPerson values, note that **we only check the NULL values of the age (Integer) - not the nickname (String)**. This is because the `setInt(int parameterIndex, int value)` **assigns an int - not an Integer (not nullable)**
+- Further down in the **PersonDB class** -> `updatePerson(Person oldPerson, Person newPerson)` method, when we compare the oldPerson values, note that **we only check the NULL values of the age (Integer) - not the nickname (String)**. This is because the `setInt(int parameterIndex, int value)` **assigns an int - not an Integer (not nullable)**
 
 ```java
 // Nullable - age : Integer
