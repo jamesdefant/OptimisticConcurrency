@@ -21,11 +21,7 @@ public class PersonDB {
         return conn;
     }
 
-    private static void print(String text, Person person) {
-        System.out.println(text + "\n" +
-                "ID: " + person.getId() + " | Name: " + person.getName() +
-                "\nNickname: " + person.getNickname() + " | Age: " + person.getAge() + "\n\n");
-    }
+
     public static ArrayList<Person> getPersonList() {
         ArrayList<Person> returnValue = new ArrayList<>();
         Connection conn = null;
@@ -165,5 +161,11 @@ public class PersonDB {
         }
 
         return isSuccess;
+    }
+
+    private static void print(String text, Person person) {
+        System.out.println(text + "\n" +
+                "ID: " + person.getId() + " | Name: " + person.getName() +
+                "\nNickname: " + person.getNickname() + " | Age: " + person.getAge() + "\n\n");
     }
 }
