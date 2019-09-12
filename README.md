@@ -1,4 +1,4 @@
-# OptimisticConcurrency
+# Optimistic Concurrency & NULL Values
 
 This is a sample JavaFX app that grabs data from a MySQL database and updates it.
 It handles **null values** and **optimisitc concurrency** (will not allow you to change a value that has been changed since you accessed the data)
