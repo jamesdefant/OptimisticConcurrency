@@ -124,12 +124,11 @@ public class PersonDB {
             // name
             stmt.setString(5, oldPerson.getName());
 
-            // nickname - nullable String
+            // Nullable nickname : String
             stmt.setString(6, oldPerson.getNickname());
             stmt.setString(7, oldPerson.getNickname());
 
-
-            // age - nullable Integer
+            // Nullable - age : Integer
             if(oldPerson.getAge() == null || oldPerson.getAge() == 0) {
                 System.out.println("Age is null");
                 stmt.setNull(8, Types.INTEGER);
